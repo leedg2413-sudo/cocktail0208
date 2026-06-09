@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cocktail Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 메인 화면 -->
+        <div id="home-screen" class="screen active">
+            <h1 class="main-title">Neon & Velvet</h1>
+            <p class="subtitle">당신의 오늘을 완벽하게 마무리할 단 한 잔의 칵테일.</p>
+            <button id="start-btn" class="glow-btn">맞춤형 칵테일 찾기 시작</button>
+        </div>
+
+        <!-- 질문 화면 -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+            <h2 id="question-text" class="question-text">어떤 맛을 선호하시나요?</h2>
+            <div id="options-container" class="options-container">
+                <!-- 동적 생성 -->
+            </div>
+            <div id="custom-input-container" class="custom-input-container hidden">
+                <input type="text" id="allergy-input" placeholder="추가로 피하고 싶은 재료나 알레르기 (선택)" />
+            </div>
+            
+            <div class="nav-buttons">
+                <button id="prev-btn" class="secondary-btn hidden">이전</button>
+                <div style="flex-grow:1"></div>
+                <button id="next-btn" class="glow-btn hidden">다음</button>
+            </div>
+        </div>
+
+        <!-- 로딩 화면 -->
+        <div id="loading-screen" class="screen">
+            <div class="shaker-animation">🍸</div>
+            <h2>당신을 위한 칵테일을 준비하고 있습니다...</h2>
+            <p class="loading-subtext">맛과 분위기를 조화롭게 섞는 중</p>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <div class="result-image-container">
+                    <img id="result-image" src="" alt="Cocktail Image">
+                </div>
+                <div class="result-info">
+                    <h2 id="result-name">칵테일 이름</h2>
+                    <div class="result-tags" id="result-tags"></div>
+                    <p id="result-desc">추천 이유 설명</p>
+                    <button id="restart-btn" class="secondary-btn" style="margin-top: 20px;">다시 추천받기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="data.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
